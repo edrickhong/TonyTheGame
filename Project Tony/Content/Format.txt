@@ -1,0 +1,15 @@
+// x size y size
+
+//map
+
+//bouncepad values
+vector2 strength facepos
+
+//crate values
+vector2
+
+//shot values
+vector2 left/right speed
+
+//Playerstart
+Vector2

@@ -1,0 +1,600 @@
+#region File Description
+//-----------------------------------------------------------------------------
+// GameplayScreen.cs
+//
+// Microsoft XNA Community Game Platform
+// Copyright (C) Microsoft Corporation. All rights reserved.
+//-----------------------------------------------------------------------------
+#endregion
+
+#region Using Statements
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Input.Touch;
+using Microsoft.Xna.Framework.GamerServices;
+using GameStateManagement;
+using System.IO;
+using System.Collections.Generic;
+using ChaseCameraSample;
+#endregion
+
+namespace GameStateManagementSample
+{
+    /// <summary>
+    /// This screen implements the actual game logic. It is just a
+    /// placeholder to get the idea across: you'll probably want to
+    /// put some more interesting gameplay in here!
+    /// </summary>
+    class GameplayScreen : GameScreen
+    {
+        #region Fields
+
+        //for creating and reading maps
+        StringReader read;
+        StringWriter write;
+        int[,] Level;
+
+
+        Vector2 camPos;
+
+        Color AlphaFade = Color.Black;
+        float Alpha = 0;
+
+        SpriteBatch batch;
+        Vector2 playerStart;
+        string[] msg;
+
+        //Spikes
+        List<Spike> spikeList;
+        List<BouncePad> bounceList;
+        Rectangle col;
+        PhysicsObjects.Launcher launcher2;
+        Crate crate2;
+        Texture2D flag;
+        Texture2D tail;
+        Texture2D blank;
+        BreakParticleEngine Break;
+        Texture2D stars;
+        Texture2D spikes;
+        Texture2D wreckage1, wreckage2, wreckage3;
+        List<Texture2D> breakList;
+        ContentManager content;
+        Texture2D saw;
+        Texture2D bounceText;
+        Texture2D cratetext;
+        Texture2D launchtext;
+        Crate crate;
+        float pauseAlpha;
+        Point point=new Point(0,0);
+        _2DCamera camera;
+        InputAction pauseAction;
+        SpriteFont spriteFont;
+        Vector2 rectpos = Vector2.Zero;
+        int screenwidth, screenheight;
+        Texture2D rectText;
+        Texture2D playertext;
+        PhysicsObjects.Map map;
+        PhysicsObjects.Player player1;
+        PhysicsObjects.Launcher launcher;
+        List<Texture2D> blood;
+        Texture2D splatter;
+        Texture2D blod;
+        Blood particleengine;
+        float timer=0;
+        Random ran;
+        int random;
+        bool fading = false;
+        Texture2D sky;
+        Texture2D smokeText;
+
+        Game game;
+        #endregion
+
+        #region Initialization
+
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public GameplayScreen(Game game)
+        {
+            TransitionOnTime = TimeSpan.FromSeconds(1.5);
+            TransitionOffTime = TimeSpan.FromSeconds(0.5);
+
+            this.game = game;
+            pauseAction = new InputAction(
+                new Buttons[] { Buttons.Start},
+                new Keys[] { Keys.Escape },
+                true);
+        }
+
+        
+
+        /// <summary>
+        /// Load graphics content for the game.
+        /// </summary>
+        public override void Activate(bool instancePreserved)
+        {
+            if (!instancePreserved)
+            {
+                if (content == null)
+                    content = new ContentManager(ScreenManager.Game.Services, "Content");
+
+                msg = new string[]{
+                "OMG! You killed Tony,you bastard!",
+	"First try!",
+	"Fatality!",
+	"I regret nothing",
+	"Goodbye cruel world",
+	"You're not good at this,are you?",
+	"Don't quit your day job",
+	"Missed it by that much",
+	"Tony?Tony...TOOONYYY!",
+	"You ded",
+	"New hi-score!",
+	"Splat!",
+	"You don't last very long",
+	"Tony had a short life expectancy",
+	"Good thing you have life insurance",
+	"Nuuuu!",
+	"As imagined by George R.R Martin",
+	"RIP",
+	"Wasted",
+	"I leave all my possessions \n to my pet dog",
+	"Death be a cruel mistress",
+	"10 points for trying",
+	"Don't forget to show Death \n your customer loyalty card",
+	"Look before you leap",
+ 	"You receive \n the participation award",
+    "Real women are completely round",
+    "Real women have curves, \n 360 degrees to be exact",
+    "Tony is a strong female character. \n Take that Ubisoft!",
+    "More bug free than AC:Unity. \n Take that Ubisoft",
+            };
+                sky = content.Load<Texture2D>("Sky");
+                blank = content.Load<Texture2D>("blank");
+                
+                tail = content.Load<Texture2D>("cursor");
+                flag = content.Load<Texture2D>("Flag");
+                PhysicsObjects.Tiles.content = content;
+                camera = new _2DCamera(ScreenManager.GraphicsDevice.Viewport);
+                map = new PhysicsObjects.Map();
+                rectText = content.Load<Texture2D>("rectText");
+                launchtext = content.Load<Texture2D>("LauncherSheet1");
+                spriteFont = content.Load<SpriteFont>("gameFont");
+                saw = content.Load<Texture2D>("Buzzsaw");
+                bounceText = content.Load<Texture2D>("Bounce");
+                cratetext = content.Load<Texture2D>("Crate");
+                splatter = content.Load<Texture2D>("BloodSplatter");
+                smokeText = content.Load<Texture2D>("Smoke");
+                spikes = content.Load<Texture2D>("Spikes");
+                wreckage1 = content.Load<Texture2D>("Wreckage1");
+                wreckage2 = content.Load<Texture2D>("Wreckage2");
+                wreckage3 = content.Load<Texture2D>("Wreckage3");
+                stars = content.Load<Texture2D>("Star");
+                breakList = new List<Texture2D>();
+                breakList.Add(smokeText);
+                breakList.Add(wreckage1);
+                breakList.Add(wreckage2);
+                breakList.Add(wreckage3);
+                breakList.Add(stars);
+                Break = new BreakParticleEngine(breakList,new Vector2(100,300));
+                
+                blood = new List<Texture2D>();
+
+
+                blod = content.Load<Texture2D>("Blood");
+                blood.Add(blod);
+                particleengine = new Blood(blood,new Vector2(90,90),splatter,rectText);
+                bounceList = new List<BouncePad>();
+                bounceList.Add(new BouncePad(bounceText,new Vector2(694,299),new Vector2(0,-30),0.8f,0.4f,0,rectText));
+                bounceList.Add( new BouncePad(bounceText, new Vector2(-20, 619), new Vector2(0, -30), 14, 0.4f, 0, rectText));
+                launcher = new PhysicsObjects.Launcher(launchtext,new Vector2(710,224),false,saw);
+                launcher2 = new PhysicsObjects.Launcher(launchtext, new Vector2(80, 544), true, saw);
+                spikeList = new List<Spike>();
+                spikeList.Add(new Spike(spikes, new Vector2(250, 1275), rectText, 0));
+                spikeList.Add(new Spike(spikes, new Vector2(835, 1275), rectText, 0));
+                spikeList.Add(new Spike(spikes, new Vector2(1070, 1275), rectText, 0));
+                spikeList.Add(new Spike(spikes, new Vector2(1080, 295), rectText, 4.71238898f));
+                spikeList.Add(new Spike(spikes, new Vector2(1080, 950), rectText, 4.71238898f));
+                spikeList.Add(new Spike(spikes, new Vector2(1080, 1155), rectText, 4.71238898f));
+
+                crate2 = new Crate(cratetext,new Vector2(1000,300),1);
+                crate = new Crate(cratetext, new Vector2(1050, 1000), 1);
+
+                map.Generate(new int[,] {
+                    {0,0,0,0,0,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0},
+                    {0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0},
+                    {1,0,1,0,0,0,1,0,0,1,1,0,2,1,1,0,0,0,0,0,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2},
+                    {0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,2,2,2,2},
+                    {0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,2,2,2,2},
+                    {0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,2,2,2,2},
+                    {0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,2,2,2,2},
+                    {0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,2,2,2,2},
+                    {1,1,1,1,0,0,0,1,1,1,1,2,2,0,0,0,0,0,0,0,2,2,2,2},
+                    {2,2,2,2,0,0,0,2,2,2,2,2,2,0,0,0,0,0,0,0,2,2,2,2},
+                    
+                }, 64);
+                playertext = content.Load<Texture2D>("PlayerSprite");
+
+                playerStart = new Vector2(50, 1250);
+                player1 = new PhysicsObjects.Player(playertext,playerStart,0.8f,1,true,rectText,smokeText,tail);
+                screenwidth = ScreenManager.GraphicsDevice.Viewport.Width;
+                screenheight = ScreenManager.GraphicsDevice.Viewport.Height;
+
+                col = new Rectangle((int)1450, (int)0, (int)(flag.Width * 0.07), (int)(flag.Height * 0.07));
+
+               // TouchPanel.EnabledGestures = GestureType.Tap | GestureType.DoubleTap;
+                // A real game would probably have more content than this sample, so
+                // it would take longer to load. We simulate that by delaying for a
+                // while, giving you a chance to admire the beautiful loading screen.
+                Thread.Sleep(1000);
+
+                // once the load has finished, we use ResetElapsedTime to tell the game's
+                // timing mechanism that we have just finished a very long frame, and that
+                // it should not try to catch up.
+                ScreenManager.Game.ResetElapsedTime();
+            }
+
+#if WINDOWS_PHONE
+            if (Microsoft.Phone.Shell.PhoneApplicationService.Current.State.ContainsKey("PlayerPosition"))
+            {
+                playerPosition = (Vector2)Microsoft.Phone.Shell.PhoneApplicationService.Current.State["PlayerPosition"];
+                enemyPosition = (Vector2)Microsoft.Phone.Shell.PhoneApplicationService.Current.State["EnemyPosition"];
+            }
+#endif
+        }
+
+
+        public override void Deactivate()
+        {
+#if WINDOWS_PHONE
+            Microsoft.Phone.Shell.PhoneApplicationService.Current.State["PlayerPosition"] = playerPosition;
+            Microsoft.Phone.Shell.PhoneApplicationService.Current.State["EnemyPosition"] = enemyPosition;
+#endif
+
+            base.Deactivate();
+        }
+
+
+        /// <summary>
+        /// Unload graphics content used by the game.
+        /// </summary>
+        public override void Unload()
+        {
+            content.Unload();
+
+#if WINDOWS_PHONE
+            Microsoft.Phone.Shell.PhoneApplicationService.Current.State.Remove("PlayerPosition");
+            Microsoft.Phone.Shell.PhoneApplicationService.Current.State.Remove("EnemyPosition");
+#endif
+        }
+
+
+        #endregion
+
+        #region Update and Draw
+
+
+        /// <summary>
+        /// Updates the state of the game. This method checks the GameScreen.IsActive
+        /// property, so the game will stop updating when the pause menu is active,
+        /// or if you tab away to a different application.
+        /// </summary>
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
+                                                       bool coveredByOtherScreen)
+        {
+            base.Update(gameTime, otherScreenHasFocus, false);
+            
+            // Gradually fade in or out depending on whether we are covered by the pause screen.
+            if (coveredByOtherScreen)
+                pauseAlpha = Math.Min(pauseAlpha + 1f / 32, 1);
+            else
+                pauseAlpha = Math.Max(pauseAlpha - 1f / 32, 0);
+
+            if (IsActive)
+            {
+                if(col.Intersects(player1.col)){
+                   // ScreenManager.AddScreen(new BackgroundScreen(),null);
+                    GameScreen[] screens = new GameScreen[] {new BackgroundScreen(),new MainMenuScreen(game) };
+
+                    LoadingScreen.Load(ScreenManager, true, PlayerIndex.One,screens);
+                }
+
+                if (player1.gameOver)
+                {
+                    if(!fading)
+                    Alpha = 0;
+
+                    fading = true;
+                    player1.pos = playerStart;
+                    
+                }
+                else
+                    camPos = player1.pos;
+                if(timer>5000){
+                    player1.pos = playerStart;
+                    timer = 0;
+                    fading = false;
+                    player1.gameOver = false;
+                    camPos = player1.pos;
+
+                    
+                    
+                }
+                if (fading)
+                {
+                    
+
+                    timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+                    if (timer >= 1000 && timer < 4800)
+                    {
+                        Alpha += 0.01f;
+                        fading = true;
+
+                    }
+                    else
+                    {
+                        
+                        Alpha -= 0.01f;
+                    }
+
+
+                    
+                }
+
+                particleengine.Update();
+
+
+                if(particleengine.toggle){
+                    player1.pos = playerStart;
+                    ran = new Random();
+                    random = ran.Next(0,msg.Length-1);
+                    GamePad.SetVibration(PlayerIndex.One, 5, 15);
+                    
+                }
+                else
+                    GamePad.SetVibration(PlayerIndex.One, 0, 0);
+
+                foreach(PhysicsObjects.Saw saw in launcher.saws){
+                    saw.Collision(player1,particleengine);
+                    if (saw.pos.X > map.width || saw.pos.X < -50)
+                        saw.delete = true;
+                    if (saw.pos.Y > map.height || saw.pos.Y < -50)
+                        saw.delete = true;
+                }
+
+                foreach (PhysicsObjects.Saw saw in launcher2.saws)
+                {
+                    saw.Collision(player1, particleengine);
+                    if (saw.pos.X > map.width || saw.pos.X < -50)
+                        saw.delete = true;
+                    if (saw.pos.Y > map.height || saw.pos.Y < -50)
+                        saw.delete = true;
+                }
+
+                foreach(Spike s in spikeList){
+                    s.Update(player1,particleengine);
+                }
+                
+                foreach(PhysicsObjects.Saw s in launcher.saws){
+                    bounceList[0].Collision(s,s.col);
+                }
+
+                 Break.Update();
+                launcher.Update(gameTime);
+                launcher2.Update(gameTime);
+                if (player1.pos.X <= 0+5)
+                    player1.pos.X = 0 + 5;
+
+
+               
+                for (int i = 0; i < map.tiles.Count - 1; i++)
+                {
+                    player1.SpriteCollision(map.tiles[i].rectangle, map.width, map.height);
+                    particleengine.Collision(map.tiles[i],ScreenManager.GraphicsDevice);
+
+                    foreach(PhysicsObjects.Saw s in launcher.saws){
+                        s.BounceCollision(map.tiles[i].rectangle, map.width, map.height);
+                    }
+
+                    foreach (PhysicsObjects.Saw s in launcher2.saws)
+                    {
+                        s.BounceCollision(map.tiles[i].rectangle, map.width, map.height);
+                    }
+                }
+                
+                crate.Update(gameTime);
+                crate2.Update(gameTime);
+
+                if (!player1.punching && crate.scale >= crate.originalScale)
+                    player1.SpriteCollision(crate2.col, map.width, map.height);
+                else
+                    crate2.Collision(player1,Break);
+
+
+                if (!player1.punching && crate.scale >= crate.originalScale)
+                    player1.SpriteCollision(crate.col, map.width, map.height);
+                else
+                    crate.Collision(player1,Break);
+
+                camera.Update(camPos, map.width, map.height);
+
+                for (int i = 0; i < map.tiles.Count - 1; i++)
+                {
+                    point = new Point((int)player1.col.Location.X + (player1.col.Width/2), (int)(player1.pos.Y + player1.col.Height + 10));
+                    player1.grounded = map.tiles[i].rectangle.Contains(point.X, point.Y) || crate.col.Contains(point)
+                        || crate2.col.Contains(point); 
+                    if (player1.grounded)
+                        break;
+                }
+
+                foreach(BouncePad b in bounceList){
+                    b.Update(gameTime);
+                    b.Collision(player1,player1.col);
+                }
+
+                player1.Update(gameTime);
+
+
+                for (int i = 0; i < map.tiles.Count - 1; i++)
+                {
+                    
+                    point = new Point((int)player1.col.Location.X-3, (int)(player1.pos.Y + (player1.col.Height/2)));
+                    if (map.tiles[i].rectangle.Contains(point) && !player1.grounded)
+                    {
+                        player1.sliding = true;
+                        break;
+                    }
+                    else
+                        player1.sliding = false;
+                    point = new Point((int)player1.col.Location.X+player1.col.Width + 6, (int)(player1.pos.Y + (player1.col.Height / 2)));
+                    if (map.tiles[i].rectangle.Contains(point) && !player1.grounded)
+                    {
+                        player1.sliding = true;
+                        break;
+                    }
+                    else
+                        player1.sliding = false;
+                }
+                
+
+                
+            }
+        }
+
+
+        /// <summary>
+        /// Lets the game respond to player input. Unlike the Update method,
+        /// this will only be called when the gameplay screen is active.
+        /// </summary>
+        public override void HandleInput(GameTime gameTime, InputState input)
+        {
+            if (input == null)
+                throw new ArgumentNullException("input");
+
+            // Look up inputs for the active player profile.
+            int playerIndex = (int)ControllingPlayer.Value;
+
+            KeyboardState keyboardState = input.CurrentKeyboardStates[playerIndex];
+            GamePadState gamePadState = input.CurrentGamePadStates[playerIndex];
+
+            // The game pauses either if the user presses the pause button, or if
+            // they unplug the active gamepad. This requires us to keep track of
+            // whether a gamepad was ever plugged in, because we don't want to pause
+            // on PC if they are playing with a keyboard and have no gamepad at all!
+            bool gamePadDisconnected = !gamePadState.IsConnected &&
+                                       input.GamePadWasConnected[playerIndex];
+
+            PlayerIndex player;
+            if (pauseAction.Evaluate(input, ControllingPlayer, out player) || gamePadDisconnected)
+            {
+#if WINDOWS_PHONE
+                ScreenManager.AddScreen(new PhonePauseScreen(), ControllingPlayer);
+#else
+                ScreenManager.AddScreen(new PauseMenuScreen(game), ControllingPlayer);
+                GamePad.SetVibration(PlayerIndex.One, 0, 0);
+#endif
+            }
+            else
+            {
+                if(!player1.gameOver)
+                player1.HandleInput(gameTime,input,gamePadState);
+                
+            }
+
+            
+        }
+
+        //public void DebugPrintString(IAsyncResult result) {
+        //    string msg = Guide.EndShowKeyboardInput(result);
+        //    System.Diagnostics.Debug.WriteLine("Hello dickweed "+msg);
+        //}
+
+        //
+        private void DrawOverlayText(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Begin();
+
+            spriteBatch.DrawString(spriteFont, msg[random], new Vector2((screenwidth/2)-msg[random].Length-140, screenheight/2), Color.White);
+            spriteBatch.Draw(blank,new Rectangle(0,0,screenwidth,screenheight),new Color(AlphaFade.R,AlphaFade.G,AlphaFade.B,MathHelper.Clamp(Alpha,0,255)));
+
+            spriteBatch.End();
+        }
+        //
+        
+        //
+        /// <summary>
+        /// Draws the gameplay screen.
+        /// </summary>
+        public override void Draw(GameTime gameTime)
+        {
+            // This game has a blue background. Why? Because!
+            ScreenManager.GraphicsDevice.Clear(ClearOptions.Target,
+                                               Color.YellowGreen, 0, 0);
+
+            // Our player and enemy are both actually just text strings.
+            SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
+
+           //GraphicsDevice device = graphics.GraphicsDevice;
+            GraphicsDevice device = ScreenManager.GraphicsDevice;
+            batch = spriteBatch;
+            device.Clear(Color.YellowGreen);
+            spriteBatch.Begin(SpriteSortMode.Deferred,BlendState.AlphaBlend,null,null,null,null,camera.transform);
+           // spriteBatch.Begin();
+            spriteBatch.Draw(sky,new Rectangle(0,0,(int)map.width,(int)map.height),Color.White);
+            map.Draw(spriteBatch);
+             launcher.Draw(spriteBatch);
+             launcher2.Draw(spriteBatch);
+             crate.Draw(spriteBatch);
+             crate2.Draw(spriteBatch);
+             if (!player1.gameOver)
+             {
+                 player1.Draw(spriteBatch);
+             }
+            particleengine.Draw(spriteBatch);
+            Break.Draw(spriteBatch);
+            foreach(BouncePad b in bounceList){
+                b.Draw(spriteBatch);
+            }
+            foreach(Spike s in spikeList){
+                s.Draw(spriteBatch);
+            }
+            spriteBatch.Draw(flag,col,Color.White);
+            spriteBatch.End();
+            if (fading) 
+            DrawOverlayText(spriteBatch);
+
+           
+            // If the game is transitioning on or off, fade it out to black.
+            if (TransitionPosition > 0 || pauseAlpha > 0)
+            {
+                float alpha = MathHelper.Lerp(1f - TransitionAlpha, 1f, pauseAlpha / 2);
+
+                ScreenManager.FadeBackBufferToBlack(alpha);
+            }
+        }
+
+
+        #endregion
+    }
+}
