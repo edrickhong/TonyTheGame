@@ -44,10 +44,12 @@ namespace GameStateManagementSample
         float Alpha = 0;
 
         SpriteBatch batch;
-        Vector2 playerStart;
+        Vector2 playerStart=Vector2.Zero;
         string[] msg;
 
         //Spikes
+        List<Crate> crateList;
+        List<PhysicsObjects.Launcher> launchList;
         List<Spike> spikeList;
         List<BouncePad> bounceList;
         Rectangle col;
@@ -189,44 +191,45 @@ namespace GameStateManagementSample
                 blod = content.Load<Texture2D>("Blood");
                 blood.Add(blod);
                 particleengine = new Blood(blood,new Vector2(90,90),splatter,rectText);
+
                 bounceList = new List<BouncePad>();
-                bounceList.Add(new BouncePad(bounceText,new Vector2(694,299),new Vector2(0,-30),0.8f,0.4f,0,rectText));
-                bounceList.Add( new BouncePad(bounceText, new Vector2(-20, 619), new Vector2(0, -30), 14, 0.4f, 0, rectText));
-                launcher = new PhysicsObjects.Launcher(launchtext,new Vector2(710,224),false,saw);
-                launcher2 = new PhysicsObjects.Launcher(launchtext, new Vector2(80, 544), true, saw);
+                crateList = new List<Crate>();
+                launchList = new List<PhysicsObjects.Launcher>();
+
+                //launcher = new PhysicsObjects.Launcher(launchtext,new Vector2(710,224),false,saw);
+                //launcher2 = new PhysicsObjects.Launcher(launchtext, new Vector2(80, 544), true, saw);
                 spikeList = new List<Spike>();
-                spikeList.Add(new Spike(spikes, new Vector2(250, 1211), rectText, 0));
-                spikeList.Add(new Spike(spikes, new Vector2(835, 1211), rectText, 0));
-                spikeList.Add(new Spike(spikes, new Vector2(1070, 1211), rectText, 0));
-                spikeList.Add(new Spike(spikes, new Vector2(1080, 295), rectText, 4.71238898f));
-                spikeList.Add(new Spike(spikes, new Vector2(1080, 950), rectText, 4.71238898f));
-                spikeList.Add(new Spike(spikes, new Vector2(1080, 1155), rectText, 4.71238898f));
 
-                crate2 = new Crate(cratetext,new Vector2(1000,300),1);
-                crate = new Crate(cratetext, new Vector2(1050, 1000), 1);
 
+                
+                //crate2 = new Crate(cratetext,new Vector2(1000,300),1);
+                //crate = new Crate(cratetext, new Vector2(1050, 1000), 1);
+
+
+                playertext = content.Load<Texture2D>("PlayerSprite");
+                //playerStart = new Vector2(50, 1250);
+                
+                screenwidth = ScreenManager.GraphicsDevice.Viewport.Width;
+                screenheight = ScreenManager.GraphicsDevice.Viewport.Height;
+
+                col = new Rectangle((int)1450, (int)0, (int)(flag.Width * 0.07), (int)(flag.Height * 0.07));
 
                 //read map
 
                 try
                 {
-                    ReadMap("Content\\LevelDemo.lvl");
+                    ReadMap("LevelDemo");
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
                     System.Diagnostics.Debug.WriteLine("*****ErrorHere****");
                     System.Diagnostics.Debug.WriteLine(ex);
                     System.Diagnostics.Debug.WriteLine("*****ErrorHere****");
                 }
 
                 map.Generate(Level, 64);
-                playertext = content.Load<Texture2D>("PlayerSprite");
-
-                playerStart = new Vector2(50, 1250);
-                player1 = new PhysicsObjects.Player(playertext,playerStart,0.8f,1,true,rectText,smokeText,tail);
-                screenwidth = ScreenManager.GraphicsDevice.Viewport.Width;
-                screenheight = ScreenManager.GraphicsDevice.Viewport.Height;
-
-                col = new Rectangle((int)1450, (int)0, (int)(flag.Width * 0.07), (int)(flag.Height * 0.07));
+                player1 = new PhysicsObjects.Player(playertext, playerStart, 0.8f, 1, true, rectText, smokeText, tail);
+               
 
                // TouchPanel.EnabledGestures = GestureType.Tap | GestureType.DoubleTap;
                 // A real game would probably have more content than this sample, so
@@ -278,13 +281,12 @@ namespace GameStateManagementSample
         #endregion
 
 
-        void WriteMap() { }
+        void WriteMap(string filename) { }
         void ReadMap(string filename) {
+            //Read the tilemap from file
             int xSize=0, ySize=0;
-            
 
-
-            StreamReader reader = new StreamReader(filename);
+            StreamReader reader = new StreamReader("Content\\" + filename+".lvl");
             xSize =int.Parse(reader.ReadLine());
             ySize = int.Parse(reader.ReadLine());
             System.Diagnostics.Debug.WriteLine(xSize+":"+ySize);
@@ -300,19 +302,99 @@ namespace GameStateManagementSample
 
                // System.Diagnostics.Debug.WriteLine("");
             }
+            //Debug level map 
+            //for (int y = 0; y < Level.GetLength(1); y++)
+            //{
+            //    for (int x = 0; x < Level.GetLength(0); x++)
+            //    {
+            //        System.Diagnostics.Debug.Write(Level[x, y]);
+            //    }
+            //    System.Diagnostics.Debug.WriteLine("");
+            //}
 
+            //read bouncepads
 
-
-            for (int y = 0; y < Level.GetLength(1); y++)
+            int bounceNo =Int32.Parse(reader.ReadLine());
+           // System.Diagnostics.Debug.WriteLine("bounceNo:"+reader.ReadLine());
+            for (int i = 0; i < bounceNo; i++)
             {
-                for (int x = 0; x < Level.GetLength(0); x++)
-                {
-                    System.Diagnostics.Debug.Write(Level[x, y]);
-                }
-                System.Diagnostics.Debug.WriteLine("");
+                float x = 0, y = 0;
+                string input = "";
+                input = reader.ReadLine();
+                x = float.Parse(input);
+                input = reader.ReadLine();
+                y = float.Parse(input);
+                Vector2 pos = new Vector2(x, y);
+
+                input = reader.ReadLine();
+                x = float.Parse(input);
+                input = reader.ReadLine();
+                y = float.Parse(input);
+                Vector2 direction = new Vector2(x, y);
+
+                float strength = float.Parse(reader.ReadLine());
+
+                System.Diagnostics.Debug.WriteLine("Pos" + pos + "dir" + direction + "Strength" + strength);
+                bounceList.Add(new BouncePad(bounceText, pos, direction, strength, 0.4f, 0, rectText));
             }
 
-            
+            //read Spikes
+            int spikeNo =int.Parse(reader.ReadLine());
+
+            for (int i = 0; i < spikeNo;i++ ) {
+                float x = 0, y = 0;
+                string input = "";
+                input = reader.ReadLine();
+                x = float.Parse(input);
+                input = reader.ReadLine();
+                y = float.Parse(input);
+                Vector2 pos = new Vector2(x, y);
+
+                float dir = float.Parse(reader.ReadLine());
+                spikeList.Add(new Spike(spikes,pos, rectText, dir));
+                
+            }
+            //read crates
+            int crateNo =int.Parse(reader.ReadLine());
+            for (int i = 0; i < crateNo;i++ ) {
+                float x = 0, y = 0;
+                string input = "";
+                input = reader.ReadLine();
+                x = float.Parse(input);
+                input = reader.ReadLine();
+                y = float.Parse(input);
+                Vector2 pos = new Vector2(x, y);
+
+                crateList.Add(new Crate(cratetext, pos, 1));
+            }
+            //read launcher
+            int launchNo =int.Parse(reader.ReadLine());
+            for (int i = 0; i < launchNo;i++ ) {
+                float x = 0, y = 0;
+                string input = "";
+                input = reader.ReadLine();
+                x = float.Parse(input);
+                input = reader.ReadLine();
+                y = float.Parse(input);
+                Vector2 pos = new Vector2(x, y);
+                int aBool = int.Parse(reader.ReadLine());
+                bool isright = aBool==1;
+                
+
+                launchList.Add(new PhysicsObjects.Launcher(launchtext, pos, isright, saw));
+                
+            }
+
+            //Read Player
+            float X = 0, Y = 0;
+            string Input = "";
+            Input = reader.ReadLine();
+            X = float.Parse(Input);
+            Input = reader.ReadLine();
+            Y = float.Parse(Input);
+            Vector2 Pos = new Vector2(X, Y);
+
+            playerStart = Pos;
         }
 
 
@@ -395,40 +477,62 @@ namespace GameStateManagementSample
                     player1.pos = playerStart;
                     ran = new Random();
                     random = ran.Next(0,msg.Length-1);
-                    GamePad.SetVibration(PlayerIndex.One, 5, 15);
+                    GamePad.SetVibration(PlayerIndex.One, 1000, 1000);
                     
                 }
                 else
                     GamePad.SetVibration(PlayerIndex.One, 0, 0);
 
-                foreach(PhysicsObjects.Saw saw in launcher.saws){
-                    saw.Collision(player1,particleengine);
-                    if (saw.pos.X > map.width || saw.pos.X < -50)
-                        saw.delete = true;
-                    if (saw.pos.Y > map.height || saw.pos.Y < -50)
-                        saw.delete = true;
+                foreach(PhysicsObjects.Launcher l in launchList){
+                    foreach(PhysicsObjects.Saw saw in l.saws){
+                        saw.Collision(player1, particleengine);
+                        if (saw.pos.X > map.width || saw.pos.X < -50)
+                            saw.delete = true;
+                        if (saw.pos.Y > map.height || saw.pos.Y < -50)
+                            saw.delete = true;
+                    }
                 }
 
-                foreach (PhysicsObjects.Saw saw in launcher2.saws)
-                {
-                    saw.Collision(player1, particleengine);
-                    if (saw.pos.X > map.width || saw.pos.X < -50)
-                        saw.delete = true;
-                    if (saw.pos.Y > map.height || saw.pos.Y < -50)
-                        saw.delete = true;
-                }
+                //foreach(PhysicsObjects.Saw saw in launcher.saws){
+                //    saw.Collision(player1,particleengine);
+                //    if (saw.pos.X > map.width || saw.pos.X < -50)
+                //        saw.delete = true;
+                //    if (saw.pos.Y > map.height || saw.pos.Y < -50)
+                //        saw.delete = true;
+                //}
+
+                //foreach (PhysicsObjects.Saw saw in launcher2.saws)
+                //{
+                //    saw.Collision(player1, particleengine);
+                //    if (saw.pos.X > map.width || saw.pos.X < -50)
+                //        saw.delete = true;
+                //    if (saw.pos.Y > map.height || saw.pos.Y < -50)
+                //        saw.delete = true;
+                //}
 
                 foreach(Spike s in spikeList){
                     s.Update(player1,particleengine);
                 }
-                
-                foreach(PhysicsObjects.Saw s in launcher.saws){
-                    bounceList[0].Collision(s,s.col);
-                }
 
+                //foreach (PhysicsObjects.Saw s in launcher.saws)
+                //{
+                //    bounceList[0].Collision(s, s.col);
+                //}
+                foreach(PhysicsObjects.Launcher l in launchList){
+                    foreach(PhysicsObjects.Saw s in l.saws){
+                        foreach(BouncePad b in bounceList){
+                            b.Collision(s, s.col);
+                        }
+                        //bounceList[0].Collision(s,s.col);
+                    }
+                }
                  Break.Update();
-                launcher.Update(gameTime);
-                launcher2.Update(gameTime);
+
+                foreach(PhysicsObjects.Launcher l in launchList){
+                    l.Update(gameTime);
+                }
+                //launcher.Update(gameTime);
+                //launcher2.Update(gameTime);
                 if (player1.pos.X <= 0+5)
                     player1.pos.X = 0 + 5;
 
@@ -439,39 +543,62 @@ namespace GameStateManagementSample
                     player1.SpriteCollision(map.tiles[i].rectangle, map.width, map.height);
                     particleengine.Collision(map.tiles[i],ScreenManager.GraphicsDevice);
 
-                    foreach(PhysicsObjects.Saw s in launcher.saws){
-                        s.BounceCollision(map.tiles[i].rectangle, map.width, map.height);
-                    }
 
-                    foreach (PhysicsObjects.Saw s in launcher2.saws)
+                    foreach (PhysicsObjects.Launcher l in launchList)
                     {
-                        s.BounceCollision(map.tiles[i].rectangle, map.width, map.height);
+                        foreach (PhysicsObjects.Saw saw in l.saws)
+                        {
+                            saw.BounceCollision(map.tiles[i].rectangle, map.width, map.height);
+                        }
                     }
+
+                    //foreach(PhysicsObjects.Saw s in launcher.saws){
+                    //    s.BounceCollision(map.tiles[i].rectangle, map.width, map.height);
+                    //}
+
+                    //foreach (PhysicsObjects.Saw s in launcher2.saws)
+                    //{
+                    //    s.BounceCollision(map.tiles[i].rectangle, map.width, map.height);
+                    //}
                 }
-                
-                crate.Update(gameTime);
-                crate2.Update(gameTime);
+                foreach(Crate c in crateList){
+                    c.Update(gameTime);
 
-                if (!player1.punching && crate.scale >= crate.originalScale)
-                    player1.SpriteCollision(crate2.col, map.width, map.height);
-                else
-                    crate2.Collision(player1,Break);
+                    if (!player1.punching && c.scale >= c.originalScale)
+                        player1.SpriteCollision(c.col, map.width, map.height);
+                    else
+                        c.Collision(player1, Break);
+                }
+                //crate.Update(gameTime);
+                //crate2.Update(gameTime);
+
+                //if (!player1.punching && crate.scale >= crate.originalScale)
+                //    player1.SpriteCollision(crate2.col, map.width, map.height);
+                //else
+                //    crate2.Collision(player1,Break);
 
 
-                if (!player1.punching && crate.scale >= crate.originalScale)
-                    player1.SpriteCollision(crate.col, map.width, map.height);
-                else
-                    crate.Collision(player1,Break);
+                //if (!player1.punching && crate.scale >= crate.originalScale)
+                //    player1.SpriteCollision(crate.col, map.width, map.height);
+                //else
+                //    crate.Collision(player1,Break);
 
                 camera.Update(camPos, map.width, map.height);
 
                 for (int i = 0; i < map.tiles.Count - 1; i++)
                 {
                     point = new Point((int)player1.col.Location.X + (player1.col.Width/2), (int)(player1.pos.Y + player1.col.Height + 10));
-                    player1.grounded = map.tiles[i].rectangle.Contains(point.X, point.Y) || crate.col.Contains(point)
-                        || crate2.col.Contains(point); 
+                    player1.grounded = map.tiles[i].rectangle.Contains(point.X, point.Y);
                     if (player1.grounded)
                         break;
+                    foreach(Crate c in crateList){
+                        player1.grounded = c.col.Contains(point);
+
+                        if (player1.grounded)
+                            break;
+                    }
+                    //player1.grounded = map.tiles[i].rectangle.Contains(point.X, point.Y);
+                    
                 }
 
                 foreach(BouncePad b in bounceList){
@@ -589,10 +716,14 @@ namespace GameStateManagementSample
            // spriteBatch.Begin();
             spriteBatch.Draw(sky,new Rectangle(0,0,(int)map.width,(int)map.height),Color.White);
             map.Draw(spriteBatch);
-             launcher.Draw(spriteBatch);
-             launcher2.Draw(spriteBatch);
-             crate.Draw(spriteBatch);
-             crate2.Draw(spriteBatch);
+            foreach(PhysicsObjects.Launcher l in launchList){
+                l.Draw(spriteBatch);
+            }
+
+             //launcher.Draw(spriteBatch);
+             //launcher2.Draw(spriteBatch);
+             //crate.Draw(spriteBatch);
+             //crate2.Draw(spriteBatch);
              if (!player1.gameOver)
              {
                  player1.Draw(spriteBatch);
@@ -605,6 +736,8 @@ namespace GameStateManagementSample
             foreach(Spike s in spikeList){
                 s.Draw(spriteBatch);
             }
+            foreach(Crate c in crateList)
+                c.Draw(spriteBatch);
             spriteBatch.Draw(flag,col,Color.White);
             spriteBatch.End();
             if (fading) 

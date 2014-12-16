@@ -64,7 +64,7 @@ namespace GameStateManagementSample.PhysicsObjects
             for(int i=0;i<saws.Count;i++){
                 saws[i].Update(gameTime);
                 if(saws[i].delete){saws.RemoveAt(i);
-                System.Diagnostics.Debug.WriteLine("deleting");
+               // System.Diagnostics.Debug.WriteLine("deleting");
                 }
             }
             if (spritesheet.frameIndex == fire&&curFrame!=spritesheet.frameIndex)
