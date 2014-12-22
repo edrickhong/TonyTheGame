@@ -1,0 +1,24 @@
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\bin\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\bin\x86\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\obj\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\obj\x86\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\obj\x86\Debug\GameStateManagementPC (Windows).csprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagement\bin\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagement\bin\x86\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagement\obj\x86\Debug\GameStateManagementPC (Windows).csprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagement\obj\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagement\obj\x86\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagement\bin\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagement\bin\x86\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagement\obj\x86\Debug\GameStateManagementPC (Windows).csprojResolveAssemblyReference.cache
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagement\obj\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagement\obj\x86\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagement\bin\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagement\bin\x86\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagement\obj\x86\Debug\GameStateManagementPC (Windows).csprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagement\obj\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagement\obj\x86\Debug\GameStateManagement.pdb

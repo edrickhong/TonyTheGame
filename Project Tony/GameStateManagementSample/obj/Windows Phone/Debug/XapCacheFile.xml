@@ -1,0 +1,16 @@
+﻿<xapCache source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\bin\Windows Phone\Debug\GameStateManagementSample.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="7/7/2014 9:09:16 PM">
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\Background.png" archivePath="Background.png" lastWriteTime="18/5/2011 3:58:14 AM" />
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\GameThumbnail.png" archivePath="GameThumbnail.png" lastWriteTime="18/5/2011 3:58:14 AM" />
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\bin\Windows Phone\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="6/5/2014 11:32:03 AM" />
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\bin\Windows Phone\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="6/5/2014 11:32:03 AM" />
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\bin\Windows Phone\Debug\GameStateManagementSample.dll" archivePath="GameStateManagementSample.dll" lastWriteTime="6/5/2014 12:55:07 PM" />
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagement\bin\Windows Phone\Debug\GameStateManagement.dll" archivePath="GameStateManagement.dll" lastWriteTime="6/5/2014 11:31:59 AM" />
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\bin\Windows Phone\Debug\Content\background.xnb" archivePath="Content\background.xnb" lastWriteTime="7/7/2014 8:49:04 PM" />
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\bin\Windows Phone\Debug\Content\blank.xnb" archivePath="Content\blank.xnb" lastWriteTime="7/7/2014 8:49:04 PM" />
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\bin\Windows Phone\Debug\Content\gradient.xnb" archivePath="Content\gradient.xnb" lastWriteTime="7/7/2014 8:49:04 PM" />
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\bin\Windows Phone\Debug\Content\sprite.xnb" archivePath="Content\sprite.xnb" lastWriteTime="7/7/2014 8:49:04 PM" />
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\bin\Windows Phone\Debug\Content\basket.xnb" archivePath="Content\basket.xnb" lastWriteTime="7/7/2014 8:49:04 PM" />
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\bin\Windows Phone\Debug\Content\catbug.xnb" archivePath="Content\catbug.xnb" lastWriteTime="7/7/2014 8:49:04 PM" />
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\bin\Windows Phone\Debug\Content\menufont.xnb" archivePath="Content\menufont.xnb" lastWriteTime="7/7/2014 8:49:04 PM" />
+  <file source="K:\School\Mobile\GameStateManagementSample\GameStateManagementSample\bin\Windows Phone\Debug\Content\gamefont.xnb" archivePath="Content\gamefont.xnb" lastWriteTime="7/7/2014 8:49:04 PM" />
+</xapCache>

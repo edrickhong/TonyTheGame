@@ -1,0 +1,12 @@
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\bin\Xbox 360\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\bin\Xbox 360\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\obj\Xbox 360\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\obj\Xbox 360\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\obj\Xbox 360\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\obj\Xbox 360\Debug\GameStateManagement (Xbox360).csprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagement\bin\Xbox 360\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagement\bin\Xbox 360\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagement\obj\Xbox 360\Debug\GameStateManagement (Xbox360).csprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagement\obj\Xbox 360\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagement\obj\Xbox 360\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagement\obj\Xbox 360\Debug\GameStateManagement.pdb

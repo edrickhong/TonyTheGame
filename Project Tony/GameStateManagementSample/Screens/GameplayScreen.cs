@@ -19,7 +19,6 @@ using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.GamerServices;
 using GameStateManagement;
 using System.IO;
-using System.Collections.Generic;
 using ChaseCameraSample;
 #endregion
 
@@ -53,7 +52,6 @@ namespace GameStateManagementSample
         List<Spike> spikeList;
         List<BouncePad> bounceList;
         Rectangle col;
-        PhysicsObjects.Launcher launcher2;
         Crate crate2;
         Texture2D flag;
         Texture2D tail;
@@ -68,7 +66,6 @@ namespace GameStateManagementSample
         Texture2D bounceText;
         Texture2D cratetext;
         Texture2D launchtext;
-        Crate crate;
         float pauseAlpha;
         Point point=new Point(0,0);
         _2DCamera camera;
@@ -124,7 +121,7 @@ namespace GameStateManagementSample
             {
                 if (content == null)
                     content = new ContentManager(ScreenManager.Game.Services, "Content");
-
+                //initialize death text
                 msg = new string[]{
                 "OMG! You killed Tony,you bastard!",
 	"First try!",
@@ -156,6 +153,7 @@ namespace GameStateManagementSample
     "Tony is a strong female character. \n Take that Ubisoft!",
     "More bug free than AC:Unity. \n Take that Ubisoft",
             };
+                //load textures
                 sky = content.Load<Texture2D>("Sky");
                 blank = content.Load<Texture2D>("blank");
                 
@@ -196,14 +194,8 @@ namespace GameStateManagementSample
                 crateList = new List<Crate>();
                 launchList = new List<PhysicsObjects.Launcher>();
 
-                //launcher = new PhysicsObjects.Launcher(launchtext,new Vector2(710,224),false,saw);
-                //launcher2 = new PhysicsObjects.Launcher(launchtext, new Vector2(80, 544), true, saw);
                 spikeList = new List<Spike>();
 
-
-                
-                //crate2 = new Crate(cratetext,new Vector2(1000,300),1);
-                //crate = new Crate(cratetext, new Vector2(1050, 1000), 1);
 
 
                 playertext = content.Load<Texture2D>("PlayerSprite");
@@ -211,10 +203,10 @@ namespace GameStateManagementSample
                 
                 screenwidth = ScreenManager.GraphicsDevice.Viewport.Width;
                 screenheight = ScreenManager.GraphicsDevice.Viewport.Height;
-
+                //col is the collider for the flag which serves as the end point. PS: redo flag texture cos it sucks
                 col = new Rectangle((int)1450, (int)0, (int)(flag.Width * 0.07), (int)(flag.Height * 0.07));
 
-                //read map
+                //read map from file
 
                 try
                 {
@@ -226,10 +218,14 @@ namespace GameStateManagementSample
                     System.Diagnostics.Debug.WriteLine(ex);
                     System.Diagnostics.Debug.WriteLine("*****ErrorHere****");
                 }
+                //Level creation starts here. comment once created and saved
 
+                //generate the map from 2darray Level of tile size of 64
                 map.Generate(Level, 64);
                 player1 = new PhysicsObjects.Player(playertext, playerStart, 0.8f, 1, true, rectText, smokeText, tail);
                
+                //Saves the level to a lvl file of the name.Only use for level creation
+                //WriteMap("A");
 
                // TouchPanel.EnabledGestures = GestureType.Tap | GestureType.DoubleTap;
                 // A real game would probably have more content than this sample, so
@@ -281,7 +277,73 @@ namespace GameStateManagementSample
         #endregion
 
 
-        void WriteMap(string filename) { }
+        void WriteMap(string filename) {
+            //looks/create lvl file
+            StreamWriter write = new StreamWriter("Content\\" + filename + ".lvl");
+            //writes the size of the map(x by y)
+            write.WriteLine(Level.GetLength(0).ToString());
+            write.WriteLine(Level.GetLength(1).ToString());
+            string map="";
+            //write the map
+            for(int y=0;y<Level.GetLength(1);y++){
+                for (int x = 0; x < Level.GetLength(0); x++)
+                {
+                    map+=Level[x,y];
+
+                }
+                write.WriteLine(map);
+                map = "";
+            }
+            //write bouncepads
+            write.WriteLine(bounceList.Count.ToString());
+            foreach (BouncePad b in bounceList)
+            {
+                //write pos
+                write.WriteLine(b.pos.X.ToString());
+                write.WriteLine(b.pos.Y.ToString());
+                //write dir
+                write.WriteLine(b.bouncedirection.X.ToString());
+                write.WriteLine(b.bouncedirection.Y.ToString());
+                //write strength
+                write.WriteLine(b.strength);
+
+            }
+
+            //write Spikes
+            write.WriteLine(spikeList.Count.ToString());
+            foreach(Spike s in spikeList){
+                write.WriteLine(s.pos.X.ToString());
+                write.WriteLine(s.pos.Y.ToString());
+
+                write.WriteLine(s.rotation);
+            }
+            //write crates
+            write.WriteLine(crateList.Count.ToString());
+            foreach (Crate c in crateList) {
+                write.WriteLine(c.pos.X.ToString());
+                write.WriteLine(c.pos.Y.ToString());
+            }
+            //write launcher
+            write.WriteLine(launchList.Count.ToString());
+            foreach(PhysicsObjects.Launcher l in launchList){
+                write.WriteLine(l.pos.X.ToString());
+                write.WriteLine(l.pos.Y.ToString());
+
+                if (l.Right)
+                {
+                    write.WriteLine("1");
+                }
+                else {
+                    write.WriteLine("0");
+                }
+            }
+            //write Player
+            write.WriteLine(playerStart.X.ToString());
+            write.WriteLine(playerStart.Y.ToString());
+
+            //forgot to add endpos. add next time
+            write.Close();
+        }
         void ReadMap(string filename) {
             //Read the tilemap from file
             int xSize=0, ySize=0;
@@ -395,6 +457,8 @@ namespace GameStateManagementSample
             Vector2 Pos = new Vector2(X, Y);
 
             playerStart = Pos;
+            //forgot to add endpos. add next time
+            reader.Close();
         }
 
 
@@ -420,13 +484,13 @@ namespace GameStateManagementSample
 
             if (IsActive)
             {
+                //if player reaches end, transition to main menu
                 if(col.Intersects(player1.col)){
-                   // ScreenManager.AddScreen(new BackgroundScreen(),null);
                     GameScreen[] screens = new GameScreen[] {new BackgroundScreen(),new MainMenuScreen(game) };
 
                     LoadingScreen.Load(ScreenManager, true, PlayerIndex.One,screens);
                 }
-
+                //if player dies, reset to start. start fading
                 if (player1.gameOver)
                 {
                     if(!fading)
@@ -437,7 +501,8 @@ namespace GameStateManagementSample
                     
                 }
                 else
-                    camPos = player1.pos;
+                    camPos = player1.pos; //only set camera to the player after fading is fin
+                //time for fade transition
                 if(timer>5000){
                     player1.pos = playerStart;
                     timer = 0;
@@ -448,12 +513,13 @@ namespace GameStateManagementSample
                     
                     
                 }
+                //fades the screen 
                 if (fading)
                 {
                     
 
                     timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
+                    //fade out while in between these values
                     if (timer >= 1000 && timer < 4800)
                     {
                         Alpha += 0.01f;
@@ -462,17 +528,17 @@ namespace GameStateManagementSample
                     }
                     else
                     {
-                        
+                        //fade in
                         Alpha -= 0.01f;
                     }
 
 
                     
                 }
-
+                //update the blood particle engine
                 particleengine.Update();
 
-
+                //if blood particle engine is on reset player pos and generate ran message. reset player pos is done twice cos i thougt it would fix it. wrong
                 if(particleengine.toggle){
                     player1.pos = playerStart;
                     ran = new Random();
@@ -482,7 +548,7 @@ namespace GameStateManagementSample
                 }
                 else
                     GamePad.SetVibration(PlayerIndex.One, 0, 0);
-
+                //check fo collision w players. if offscreen, delete
                 foreach(PhysicsObjects.Launcher l in launchList){
                     foreach(PhysicsObjects.Saw saw in l.saws){
                         saw.Collision(player1, particleengine);
@@ -492,47 +558,25 @@ namespace GameStateManagementSample
                             saw.delete = true;
                     }
                 }
-
-                //foreach(PhysicsObjects.Saw saw in launcher.saws){
-                //    saw.Collision(player1,particleengine);
-                //    if (saw.pos.X > map.width || saw.pos.X < -50)
-                //        saw.delete = true;
-                //    if (saw.pos.Y > map.height || saw.pos.Y < -50)
-                //        saw.delete = true;
-                //}
-
-                //foreach (PhysicsObjects.Saw saw in launcher2.saws)
-                //{
-                //    saw.Collision(player1, particleengine);
-                //    if (saw.pos.X > map.width || saw.pos.X < -50)
-                //        saw.delete = true;
-                //    if (saw.pos.Y > map.height || saw.pos.Y < -50)
-                //        saw.delete = true;
-                //}
-
+                //checks for col with spikes. note, particle engine is switched on whenever player dies
+                //engine automatically switches off after generating x number of particles
                 foreach(Spike s in spikeList){
                     s.Update(player1,particleengine);
                 }
-
-                //foreach (PhysicsObjects.Saw s in launcher.saws)
-                //{
-                //    bounceList[0].Collision(s, s.col);
-                //}
+                //check for col between saws and bouncepads
                 foreach(PhysicsObjects.Launcher l in launchList){
                     foreach(PhysicsObjects.Saw s in l.saws){
                         foreach(BouncePad b in bounceList){
                             b.Collision(s, s.col);
                         }
-                        //bounceList[0].Collision(s,s.col);
                     }
                 }
+                //updates the particle system for the crate breaking effect
                  Break.Update();
 
                 foreach(PhysicsObjects.Launcher l in launchList){
                     l.Update(gameTime);
                 }
-                //launcher.Update(gameTime);
-                //launcher2.Update(gameTime);
                 if (player1.pos.X <= 0+5)
                     player1.pos.X = 0 + 5;
 
@@ -543,7 +587,7 @@ namespace GameStateManagementSample
                     player1.SpriteCollision(map.tiles[i].rectangle, map.width, map.height);
                     particleengine.Collision(map.tiles[i],ScreenManager.GraphicsDevice);
 
-
+//check collision between saws and the tiles
                     foreach (PhysicsObjects.Launcher l in launchList)
                     {
                         foreach (PhysicsObjects.Saw saw in l.saws)
@@ -551,40 +595,20 @@ namespace GameStateManagementSample
                             saw.BounceCollision(map.tiles[i].rectangle, map.width, map.height);
                         }
                     }
-
-                    //foreach(PhysicsObjects.Saw s in launcher.saws){
-                    //    s.BounceCollision(map.tiles[i].rectangle, map.width, map.height);
-                    //}
-
-                    //foreach (PhysicsObjects.Saw s in launcher2.saws)
-                    //{
-                    //    s.BounceCollision(map.tiles[i].rectangle, map.width, map.height);
-                    //}
                 }
+                
                 foreach(Crate c in crateList){
+                    //update crate
                     c.Update(gameTime);
-
+                    //checks for col between player and crates if not slamming
                     if (!player1.punching && c.scale >= c.originalScale)
                         player1.SpriteCollision(c.col, map.width, map.height);
                     else
-                        c.Collision(player1, Break);
+                        c.Collision(player1, Break);//else if punching,switch on break particle and bounce player
                 }
-                //crate.Update(gameTime);
-                //crate2.Update(gameTime);
-
-                //if (!player1.punching && crate.scale >= crate.originalScale)
-                //    player1.SpriteCollision(crate2.col, map.width, map.height);
-                //else
-                //    crate2.Collision(player1,Break);
-
-
-                //if (!player1.punching && crate.scale >= crate.originalScale)
-                //    player1.SpriteCollision(crate.col, map.width, map.height);
-                //else
-                //    crate.Collision(player1,Break);
-
+                //moves the camera according to cam pos
                 camera.Update(camPos, map.width, map.height);
-
+                //checks if the player is grounded
                 for (int i = 0; i < map.tiles.Count - 1; i++)
                 {
                     point = new Point((int)player1.col.Location.X + (player1.col.Width/2), (int)(player1.pos.Y + player1.col.Height + 10));
@@ -597,18 +621,18 @@ namespace GameStateManagementSample
                         if (player1.grounded)
                             break;
                     }
-                    //player1.grounded = map.tiles[i].rectangle.Contains(point.X, point.Y);
                     
                 }
-
+                
                 foreach(BouncePad b in bounceList){
                     b.Update(gameTime);
+                    //checks for collision between player and bouncepads. bounce the player if there is
                     b.Collision(player1,player1.col);
                 }
 
                 player1.Update(gameTime);
 
-
+                //check for sliding
                 for (int i = 0; i < map.tiles.Count - 1; i++)
                 {
                     
@@ -670,6 +694,7 @@ namespace GameStateManagementSample
             }
             else
             {
+                //handle player input
                 if(!player1.gameOver)
                 player1.HandleInput(gameTime,input,gamePadState);
                 
@@ -683,9 +708,10 @@ namespace GameStateManagementSample
         //    System.Diagnostics.Debug.WriteLine("Hello dickweed "+msg);
         //}
 
-        //
+        //overlay text is drawn in respective to screen origin. used for debugging
         private void DrawOverlayText(SpriteBatch spriteBatch)
         {
+            //uses a diff spritebatch draw. drawn in perspective of screen. doesnt follow camera: UI
             spriteBatch.Begin();
 
             spriteBatch.DrawString(spriteFont, msg[random], new Vector2((screenwidth/2)-msg[random].Length-140, screenheight/2), Color.White);
@@ -712,6 +738,7 @@ namespace GameStateManagementSample
             GraphicsDevice device = ScreenManager.GraphicsDevice;
             batch = spriteBatch;
             device.Clear(Color.YellowGreen);
+            //draws in respective to space. eg: doesn't follow the camera
             spriteBatch.Begin(SpriteSortMode.Deferred,BlendState.AlphaBlend,null,null,null,null,camera.transform);
            // spriteBatch.Begin();
             spriteBatch.Draw(sky,new Rectangle(0,0,(int)map.width,(int)map.height),Color.White);
@@ -719,11 +746,6 @@ namespace GameStateManagementSample
             foreach(PhysicsObjects.Launcher l in launchList){
                 l.Draw(spriteBatch);
             }
-
-             //launcher.Draw(spriteBatch);
-             //launcher2.Draw(spriteBatch);
-             //crate.Draw(spriteBatch);
-             //crate2.Draw(spriteBatch);
              if (!player1.gameOver)
              {
                  player1.Draw(spriteBatch);

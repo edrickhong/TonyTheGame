@@ -13,7 +13,7 @@ using GameStateManagement;
 namespace GameStateManagementSample
 {
     class _2DCamera
-    {
+    {//moves the camera with target
         public Matrix transform;
         private Vector2 centre;
         private Viewport viewport;

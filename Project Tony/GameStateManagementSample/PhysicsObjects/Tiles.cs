@@ -13,7 +13,7 @@ using GameStateManagement;
 namespace GameStateManagementSample.PhysicsObjects
 {
     public class Tiles
-    {
+    {//basic tile info
         public Texture2D texture;
         public Rectangle rectangle;
         public static ContentManager content;

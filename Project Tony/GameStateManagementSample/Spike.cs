@@ -15,11 +15,11 @@ namespace GameStateManagementSample
     class Spike
     {
         Texture2D text;
-        Vector2 pos;
+        public Vector2 pos;
         Rectangle col;
         Texture2D rect;
         float scale=0.4f;
-        float rotation;
+        public float rotation;
         public Spike(Texture2D t,Vector2 p,Texture2D rect,float r) {
             this.rect = rect;
             text = t;

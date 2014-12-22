@@ -18,6 +18,7 @@ namespace GameStateManagementSample.PhysicsObjects
         public int width, height;
         public Map() {
         }
+        //adds a tile where the map value is>0
         public void Generate(int[,] map,int size) {
             for (int y = 0; y < map.GetLength(1); y++)
             {
@@ -35,8 +36,6 @@ namespace GameStateManagementSample.PhysicsObjects
 
         public void Draw(SpriteBatch spritebatch) {
             foreach (CollisionTiles c in tiles) {
-                //System.Diagnostics.Debug.WriteLine(Mouse.GetState().X);
-                //System.Diagnostics.Debug.WriteLine(Mouse.GetState().Y);
                 c.Draw(spritebatch);
             }
                 

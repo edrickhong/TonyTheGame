@@ -15,7 +15,7 @@ namespace GameStateManagementSample
     class Crate
     {
         Texture2D texture;
-        Vector2 pos;
+        public Vector2 pos;
         public Rectangle col;
         public float scale;
         public float originalScale;

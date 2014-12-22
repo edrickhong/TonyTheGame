@@ -1,0 +1,2 @@
+C:\Users\Student-I\Desktop\SCHOOL\Mobile\GameStateManagementSample\Content\obj\Windows Phone\Debug\Content.contentprojResolveAssemblyReference.cache
+K:\School\Mobile\GameStateManagementSample\Content\obj\Windows Phone\Debug\Content.contentprojResolveAssemblyReference.cache

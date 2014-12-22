@@ -1,0 +1,4 @@
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\Content\obj\x86\Debug\Content.contentprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\Content\obj\x86\Debug\Content.contentprojResolveAssemblyReference.cache
+C:\Users\Student-I\Documents\tony\Project Tony\Content\obj\x86\Debug\Content.contentprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\Project Tony\Content\obj\x86\Debug\Content.contentprojResolveAssemblyReference.cache

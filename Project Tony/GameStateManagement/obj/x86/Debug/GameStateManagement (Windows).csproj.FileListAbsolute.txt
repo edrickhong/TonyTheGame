@@ -1,0 +1,6 @@
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\bin\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\bin\x86\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\obj\x86\Debug\GameStateManagement (Windows).csprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\obj\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagement\obj\x86\Debug\GameStateManagement.pdb

@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>blank.png</Source>
+      <Name>blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\blank.xnb</Output>
+      <Time>2010-09-16T04:43:52+08:00</Time>
+    </Item>
+    <Item>
+      <Source>catbug.jpg</Source>
+      <Name>catbug</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\catbug.xnb</Output>
+      <Time>2014-05-06T12:55:01.2673248+08:00</Time>
+    </Item>
+    <Item>
+      <Source>gradient.png</Source>
+      <Name>gradient</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\gradient.xnb</Output>
+      <Time>2014-10-23T10:37:08.191505+08:00</Time>
+    </Item>
+    <Item>
+      <Source>MrBlimey.png</Source>
+      <Name>MrBlimey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\MrBlimey.xnb</Output>
+      <Time>2014-10-30T10:49:16.725697+08:00</Time>
+    </Item>
+    <Item>
+      <Source>gameFont.spritefont</Source>
+      <Name>gameFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\gameFont.xnb</Output>
+      <Time>2010-09-13T11:40:50+08:00</Time>
+    </Item>
+    <Item>
+      <Source>menufont.spritefont</Source>
+      <Name>menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\menufont.xnb</Output>
+      <Time>2010-09-16T04:43:52+08:00</Time>
+    </Item>
+    <Item>
+      <Source>frameRateFont.spritefont</Source>
+      <Name>frameRateFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\frameRateFont.xnb</Output>
+      <Time>2014-11-03T16:27:33.6821441+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ground.x</Source>
+      <Name>Ground</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ground.xnb</Output>
+      <Time>2010-09-13T11:40:50+08:00</Time>
+      <Dependency>
+        <Key>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\obj\Xbox 360\Debug\Ground_0.xml</Key>
+        <Value>2014-11-03T19:17:37.6198849+08:00</Value>
+      </Dependency>
+      <Request>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Checker_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Ground.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\obj\Xbox 360\Debug\Ground_0.xml</Output>
+      <Time>2010-09-13T11:40:50+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Checker.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Checker_0.xnb</Output>
+      <Time>2014-10-23T10:39:12.1901025+08:00</Time>
+    </Item>
+    <Item>
+      <Source>PlayerSprite1.png</Source>
+      <Name>PlayerSprite1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\PlayerSprite1.xnb</Output>
+      <Time>2014-11-03T23:32:02.8428867+08:00</Time>
+    </Item>
+    <Item>
+      <Source>rectText.png</Source>
+      <Name>rectText</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\rectText.xnb</Output>
+      <Time>2014-11-07T10:05:29.8535742+08:00</Time>
+    </Item>
+    <Item>
+      <Source>PlayerSprite.png</Source>
+      <Name>PlayerSprite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\PlayerSprite.xnb</Output>
+      <Time>2014-11-15T14:33:04.2224226+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Tile1.png</Source>
+      <Name>Tile1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Tile1.xnb</Output>
+      <Time>2014-11-15T14:45:26.9291228+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Tile2.png</Source>
+      <Name>Tile2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Tile2.xnb</Output>
+      <Time>2014-11-15T14:17:28.4937428+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Crate.png</Source>
+      <Name>Crate</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Crate.xnb</Output>
+      <Time>2013-05-19T17:39:32+08:00</Time>
+    </Item>
+    <Item>
+      <Source>LauncherSheet1.png</Source>
+      <Name>LauncherSheet1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\LauncherSheet1.xnb</Output>
+      <Time>2014-11-16T15:19:28.9074784+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Buzzsaw.png</Source>
+      <Name>Buzzsaw</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Buzzsaw.xnb</Output>
+      <Time>2014-11-16T15:54:00.2908141+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Bounce.png</Source>
+      <Name>Bounce</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Bounce.xnb</Output>
+      <Time>2014-11-16T21:20:01.8054762+08:00</Time>
+    </Item>
+    <Item>
+      <Source>BloodSplatter.png</Source>
+      <Name>BloodSplatter</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\BloodSplatter.xnb</Output>
+      <Time>2014-11-15T14:13:02.6448845+08:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{44459A75-F2CF-4B58-89EA-79154AF5C1AF}</ContentProjectGUID>
+      <TargetPlatform>Xbox360</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>true</CompressContent>
+      <RootDirectory>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\obj\Xbox 360\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2014-07-04T19:26:29.5790501+08:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

@@ -47,13 +47,15 @@ namespace GameStateManagementSample.PhysicsObjects
 
         public virtual void Update(GameTime gameTime)
         {
+            //if at terminal velocity, remain at terminal velocity
             if (velocity.X > terminalVelocityX)
                 velocity.X = terminalVelocityX;
             if (velocity.X < -terminalVelocityX)
                 velocity.X = -terminalVelocityX;
+
             if (gravityEnabled)
             {
-                if (velocity.Y < terminalVelocityY) //gacceleration <terminalVelocityY
+                if (velocity.Y < terminalVelocityY) //accelerate according to gravity
                 {
                     gacceleration += gravity;
                     velocity.Y += gacceleration;
@@ -61,7 +63,7 @@ namespace GameStateManagementSample.PhysicsObjects
             }
             else
             {
-                gacceleration = 0;
+                gacceleration = 0;//no acelleration by gravity
             }
         }
 
@@ -84,10 +86,12 @@ namespace GameStateManagementSample.PhysicsObjects
         
 
         public void SpriteCollision(Rectangle rect, int xOffset, int yOffset)
-        {
+        {//checks for collison between two objects.(used for player)
+            //for each if state ment(if physicsentity is touching object at top/bottom/etc)
+            //eg; the one below if the entity is touching the top of the object
             if (col.TouchTop(rect))
             {
-                //col.Y = ((int)(rect.Y - col.Height + CyOffset));
+                //allows player to stand on object. stops pushing player down so player won't go thru object
                 pos.Y = rect.Y - col.Height - (CyOffset-1);
                 velocity.Y = 0;
                 gacceleration = 0;
@@ -95,22 +99,23 @@ namespace GameStateManagementSample.PhysicsObjects
             }
             if (col.TouchLeft(rect)&&!col.TouchRight(rect))
             {
+                //stops the player from moving into object
                 pos.X = rect.X - col.Width - 4 - CxOffset-2;
                 restrictX = true;
-              //  gravityEnabled = true;
             }
             if (col.TouchRight(rect)&&!col.TouchLeft(rect))
             {
+                //stops the player from moving into object
                 pos.X = rect.X + rect.Width + 2 - CxOffset;
-                restrictX = true; ;
-               // gravityEnabled = true;
+                restrictX = true; 
             }
             if (col.TouchBottom(rect) || (col.TouchRight(rect) && col.TouchLeft(rect)))
             {
-                //pos.Y = rect.Y + col.Height + (CyOffset - 1);
+                //bounce the player down
                 if(velocity.Y<0)
                 velocity.Y *= -1;
             }
+            //clamps player to level
             if (pos.X > xOffset - rect.Width-40) pos.X = xOffset - rect.Width-40;
             if (pos.Y > yOffset - rect.Height) pos.Y = yOffset - rect.Height;
         }

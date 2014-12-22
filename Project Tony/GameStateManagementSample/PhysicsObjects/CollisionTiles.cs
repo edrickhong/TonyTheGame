@@ -13,7 +13,7 @@ using GameStateManagement;
 namespace GameStateManagementSample.PhysicsObjects
 {
    public class CollisionTiles : Tiles
-    {
+    {//loads and sets the texture of that tile name
         public CollisionTiles(int i,Rectangle rect) {
             texture = content.Load<Texture2D>("Tile"+i);
             this.rectangle = rect;

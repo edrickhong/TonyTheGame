@@ -1,0 +1,2 @@
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\Content\obj\Xbox 360\Debug\Content.contentprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\Content\obj\Xbox 360\Debug\Content.contentprojResolveAssemblyReference.cache

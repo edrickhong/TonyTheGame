@@ -11,7 +11,8 @@ using Microsoft.Xna.Framework.Input.Touch;
 using GameStateManagement;
 
 namespace GameStateManagementSample.PhysicsObjects
-{
+{//launcher has to be tweaked. rate of fire  is hard coded
+    //rate of speed is tied to animation speed
     class Launcher
     {
         //saw
@@ -20,11 +21,11 @@ namespace GameStateManagementSample.PhysicsObjects
         Vector2 pos2;
         public bool bounce = false;
         public bool gravity=false;
-        bool Right;
+        public bool Right;
         //launcher
         SpriteSheetReader spritesheet;
         public List<Saw> saws = new List<Saw>();
-        Vector2 pos;
+        public Vector2 pos;
         Texture2D texture;
         int fire;
         //animations
@@ -38,9 +39,12 @@ namespace GameStateManagementSample.PhysicsObjects
             pos2 = pos;
            
             texture = t;
+            //sets the spritesheet perimeters
             spritesheet = new SpriteSheetReader(texture,165,120,3,5);
+            
             if (isRight)
             {
+                //sets animation. (animation,speed,looping?)
                 spritesheet.setAnimation(LaunchR, 80, true);
                 pos2.X += 87;
                 pos2.Y += 65;
@@ -56,24 +60,26 @@ namespace GameStateManagementSample.PhysicsObjects
 
         public void Update(GameTime gameTime) {
             spritesheet.Update(gameTime);
+            //frame index to shoot the saw
             if (Right)
                 fire = 15;
             else
                 fire = 11;
-
+            //update saws
             for(int i=0;i<saws.Count;i++){
                 saws[i].Update(gameTime);
                 if(saws[i].delete){saws.RemoveAt(i);
                // System.Diagnostics.Debug.WriteLine("deleting");
                 }
             }
+            //spawn a saw once only
             if (spritesheet.frameIndex == fire&&curFrame!=spritesheet.frameIndex)
             {
                 saws.Add(new Saw(texture2, pos2, 0.1f, 1.5f, gravity, bounce, Right));
             }
             curFrame = spritesheet.frameIndex;
         }
-
+        //ignore these
         public void Collision(Player player) { }
         public void Bounce(PhysicsObjects.Tiles tile) { }
 

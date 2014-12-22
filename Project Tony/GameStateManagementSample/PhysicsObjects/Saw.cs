@@ -12,7 +12,7 @@ using GameStateManagement;
 namespace GameStateManagementSample.PhysicsObjects
 {
     class Saw : PhysicsEntity
-    {
+    {//saws have to be tweaked. life has to be deducted per bounce. now it deducts while intersecting w other objects
         int life = 100;
         bool Bounce;
         public bool delete=false;
@@ -26,7 +26,7 @@ namespace GameStateManagementSample.PhysicsObjects
             if (!isRight)
                 life = 28;
         }
-
+        //bounce collision with tiles. bounces against tiles when touching bottom or top. deletes when touching left or right
         public void BounceCollision(Rectangle rect, int xOffset, int yOffset)
         {
             if (col.TouchTop(rect))
@@ -60,7 +60,7 @@ namespace GameStateManagementSample.PhysicsObjects
              if (pos.X > xOffset - rect.Width) delete=true;
             if (pos.Y > yOffset - rect.Height) delete=true;
         }
-
+        //checks for collision w player
         public void Collision(Player player,Blood blood) {
             if(col.Intersects(player.col)&&!player.gameOver){
                 player.gameOver = true;

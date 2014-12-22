@@ -1,0 +1,138 @@
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\Content\Checker.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\Content\ShipDiffuse.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\Content\gameFont.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\Content\Ground.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\Content\Ship.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\Content\Checker_0.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\Content\ShipDiffuse_0.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\GameStateManagementSample.exe
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\GameStateManagementSample.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\obj\x86\Debug\GameStateManagementSample (Windows).csprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\obj\x86\Debug\GameStateManagementSample.exe
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\obj\x86\Debug\GameStateManagementSample.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\Content\blank.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\Content\menufont.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\Content\catbug.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\Content\gradient.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\Content\MrBlimey.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\x86\Debug\Content\frameRateFont.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\blank.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\catbug.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\gradient.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\MrBlimey.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\gameFont.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\menufont.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\frameRateFont.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Ground.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Checker_0.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\GameStateManagementSample.exe
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\GameStateManagementSample.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\obj\x86\Debug\GameStateManagementSample (Windows).csprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\obj\x86\Debug\GameStateManagementSample.exe
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\obj\x86\Debug\GameStateManagementSample.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\PlayerSprite1.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\rectText.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\PlayerSprite.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Tile1.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Tile2.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Crate.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\LauncherSheet1.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Buzzsaw.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Bounce.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\BloodSplatter.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Spikes.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Blood.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Smoke.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Star.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Wreckage1.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Wreckage2.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Wreckage3.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\cursor.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Controls.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Sky.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Flag.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Background.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\gameFont.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\menufont.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\frameRateFont.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Ground.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\blank.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\catbug.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\gradient.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\MrBlimey.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\PlayerSprite1.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\rectText.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\PlayerSprite.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Tile1.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Tile2.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Crate.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\LauncherSheet1.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Buzzsaw.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Bounce.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\BloodSplatter.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Spikes.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Blood.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Smoke.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Star.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Wreckage1.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Wreckage2.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Wreckage3.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\cursor.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Controls.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Sky.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Flag.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Background.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Checker_0.xnb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\GameStateManagementSample.exe
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\GameStateManagementSample.pdb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\bin\x86\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\obj\x86\Debug\GameStateManagementSample (Windows).csprojResolveAssemblyReference.cache
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\obj\x86\Debug\GameStateManagementSample.exe
+C:\Users\Student-I\Documents\tony\Project Tony\GameStateManagementSample\obj\x86\Debug\GameStateManagementSample.pdb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\gameFont.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\menufont.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\frameRateFont.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Ground.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\blank.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\catbug.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\gradient.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\MrBlimey.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\PlayerSprite1.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\rectText.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\PlayerSprite.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Tile1.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Tile2.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Crate.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\LauncherSheet1.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Buzzsaw.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Bounce.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\BloodSplatter.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Spikes.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Blood.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Smoke.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Star.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Wreckage1.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Wreckage2.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Wreckage3.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\cursor.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Controls.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Sky.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Flag.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Background.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\Content\Checker_0.xnb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\GameStateManagementSample.exe
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\GameStateManagementSample.pdb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\bin\x86\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\obj\x86\Debug\GameStateManagementSample (Windows).csprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\obj\x86\Debug\GameStateManagementSample.exe
+C:\Users\Student-I\Desktop\Project Tony\GameStateManagementSample\obj\x86\Debug\GameStateManagementSample.pdb

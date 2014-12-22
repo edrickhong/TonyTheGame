@@ -76,8 +76,8 @@ namespace GameStateManagementSample.PhysicsObjects
         bool looping = true;
         PlayerIndex playerIndex;
 
-        
-
+        //animation player has already has its own class. just too lazy to make changes
+       //animation class territory
         void PlayAnimation() {
             if (looping && frameIndex == currAnimation.Length - 1)
             {
@@ -110,10 +110,11 @@ namespace GameStateManagementSample.PhysicsObjects
             }
 
         }
+        //animation class territory
         public Player(Texture2D t,Vector2 p,float s,float w,bool b,Texture2D txt,Texture2D smoke,Texture2D tail):base(t,p,s,w,b){
 
 
-            //player tag
+            //player tag. ignore tags. was going to use a tag system, but didnt. oh well
             tag = 1;
             frameIndex = 0;
             currAnimation = idleR;
@@ -130,8 +131,9 @@ namespace GameStateManagementSample.PhysicsObjects
             ribbon = new RibbonTrail(tail, 50, 30000, 600, this);
             
         }
+        //handles animation state transition and what happens for each state
         void HandleState() {
-
+            //while falling, play frame 0
             if (!grounded && curstate != PlayerState.Jumping && curstate != PlayerState.Punching)
                 frameIndex = 0;
 
@@ -225,10 +227,11 @@ namespace GameStateManagementSample.PhysicsObjects
         }
         public override void Update(GameTime gameTime)
         {
+            //update the particle systems
             ribbon.Update(gameTime);
             slidingEmitter.Update();
             Dust.Update();
-
+            //bounces player at this frame when jumping
             if (frameIndex == 8 &&curstate==PlayerState.Jumping)
             {
                 gacceleration = 0;
@@ -239,9 +242,11 @@ namespace GameStateManagementSample.PhysicsObjects
                 Dust.toggleEmmiter = true;
             if (sliding)
                 curstate = PlayerState.Sliding;
-
+            //adds force to player
             AddForce(Force);
+            //move according to velocity
             pos += velocity;
+            //allow double jump and switch off gravity when grounded
             if (grounded)
             {
                 gravityEnabled = false;
@@ -249,7 +254,7 @@ namespace GameStateManagementSample.PhysicsObjects
             }
             else if(!sliding)
                 gravityEnabled = true;
-
+            //collision box
             col = new Rectangle((int)(pos.X+CxOffset), (int)(pos.Y+CyOffset), 50, 45);
 
             base.Update(gameTime);
@@ -264,7 +269,7 @@ namespace GameStateManagementSample.PhysicsObjects
             Force = Vector2.Zero;
         }
         public override void Draw(SpriteBatch spritebatch)
-        {
+        {//draw particle systems and player
             if(curstate!=PlayerState.Sliding&&!grounded)
             ribbon.Draw(spritebatch);
             Dust.Draw(spritebatch);
@@ -278,7 +283,7 @@ namespace GameStateManagementSample.PhysicsObjects
         public void HandleInput(GameTime gameTime, InputState input, GamePadState gamePadState)
         {
             Vector2 dir = gamePadState.ThumbSticks.Left;
-
+            //handles the col box offset when changing directions(left/right)
             if (facingRight)
             {
                 CxOffset = 40;
@@ -287,11 +292,11 @@ namespace GameStateManagementSample.PhysicsObjects
             {
                 CxOffset = 18;
             }
-
+            //if no input and grounded, set velocity x to zero. stops player from sliding on ground(acts like ice floor w/o it)
             if (dir.X == 0&&grounded)
             velocity.X = 0;
             else
-            {
+            {//moves player
                 if (!restrictX && curstate != PlayerState.Punching && curstate != PlayerState.Sliding)
                     velocity.X += dir.X * speed;
             }
@@ -300,7 +305,7 @@ namespace GameStateManagementSample.PhysicsObjects
             {
                 if(!prevState.IsButtonDown(Buttons.A)){
                     if (sliding)
-                    {
+                    {//jump for sliding
                         curstate = PlayerState.Jumping;
                         frameIndex = 9;
                         deny = true;
@@ -332,7 +337,7 @@ namespace GameStateManagementSample.PhysicsObjects
                 
                 
             }
-            else if (sliding) {
+            else if (sliding) {//slows down descent while sliding
                 gravityEnabled = false;
                 velocity.Y = 2;
             }
@@ -341,10 +346,10 @@ namespace GameStateManagementSample.PhysicsObjects
                 curstate = PlayerState.Punching;
                 velocity.Y = 0;
 
-            }
+            }//sets to idle animation
             if (grounded && !deny && !gravityEnabled && dir.X == 0)
                 curstate = PlayerState.Idle;
-            
+            //transitions to diff movement animation
             else if (dir.X != 0)
             {
                 if (grounded&&!deny&&!gravityEnabled)

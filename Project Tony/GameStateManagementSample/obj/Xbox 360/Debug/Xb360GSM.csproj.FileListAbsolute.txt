@@ -1,0 +1,48 @@
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\obj\Xbox 360\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\Content\Checker.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\Content\ShipDiffuse.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\Content\blank.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\Content\catbug.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\Content\gradient.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\Content\gameFont.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\Content\menufont.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ground.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\Content\Checker_0.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\Content\ShipDiffuse_0.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagementSample.exe
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagementSample.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\obj\Xbox 360\Debug\Xb360GSM.csprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\obj\Xbox 360\Debug\GameStateManagementSample.exe
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\obj\Xbox 360\Debug\GameStateManagementSample.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\Content\MrBlimey.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Tutorials\gsm\GameStateManagementSample\bin\Xbox 360\Debug\Content\frameRateFont.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\blank.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\catbug.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\gradient.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\MrBlimey.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\gameFont.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\menufont.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\frameRateFont.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ground.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Checker_0.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagementSample.exe
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagementSample.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagement.dll
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagement.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\obj\Xbox 360\Debug\Xb360GSM.csprojResolveAssemblyReference.cache
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\obj\Xbox 360\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\obj\Xbox 360\Debug\GameStateManagementSample.exe
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\obj\Xbox 360\Debug\GameStateManagementSample.pdb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\PlayerSprite1.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Tile1.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Tile2.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\rectText.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\PlayerSprite.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Crate.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\LauncherSheet1.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Buzzsaw.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\Bounce.xnb
+C:\Users\Student-I\Desktop\GameStateManagementSample\Project Tony\GameStateManagementSample\bin\Xbox 360\Debug\Content\BloodSplatter.xnb

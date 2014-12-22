@@ -1,0 +1,8 @@
+Content\background.xnb
+Content\blank.xnb
+Content\gradient.xnb
+Content\sprite.xnb
+Content\basket.xnb
+Content\catbug.xnb
+Content\menufont.xnb
+Content\gamefont.xnb

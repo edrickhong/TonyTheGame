@@ -16,9 +16,9 @@ namespace GameStateManagementSample
         SpriteSheetReader spritesheet;
         Texture2D texture;
         Texture2D rectText;
-        Vector2 pos;
-        Vector2 bouncedirection;
-        float strength;
+        public Vector2 pos;
+        public Vector2 bouncedirection;
+        public float strength;
         float scale;
         Rectangle col;
         float rotation;
